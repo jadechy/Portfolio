@@ -1,0 +1,34 @@
+
+<mat-sidenav-container>
+  <mat-sidenav #drawer mode="over" style="width: 250px">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/">Accueil</a>
+      <div *ngIf="isConnect()">
+        <a mat-list-item (click)="Deconnexion()">Deconnexion</a>
+        <div *ngIf="(isAdmin() | async)">
+          <a mat-list-item routerLink="/admin">Admin</a>
+        </div>
+        <div *ngIf="(isProf() | async)">
+          <a mat-list-item routerLink="/prof">Prof</a>
+        </div>
+        <div *ngIf="(isStudent() | async)">
+          <a mat-list-item routerLink="/etudiant">Etudiant</a>
+        </div>
+      </div>
+      <div *ngIf="!isConnect()">
+        <a mat-list-item routerLink="/login">Se connecter</a>
+        <a mat-list-item routerLink="/register">S'inscrire</a>
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Portfolio</span>
+    </mat-toolbar>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+

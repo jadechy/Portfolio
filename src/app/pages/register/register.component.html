@@ -1,0 +1,29 @@
+<app-header></app-header>
+<main id="inscription">
+    <section class="LoginForm">
+        <h1 class="LoginTitre">S'inscrire</h1>
+        <form [formGroup]="formController" #formLogin="ngForm" (ngSubmit)="register()">
+            <div class="LoginEmail">
+                <label>Email</label>
+                <input type="email" formControlName="email" />
+            </div>
+            <div class="LoginNom">
+                <label>Nom</label>
+                <input type="text" formControlName="nom" />
+            </div>
+            <div class="LoginPrenom">
+                <label>Prenom</label>
+                <input type="text" formControlName="prenom" />
+            </div>
+            <div class="LoginMdp">
+                <label>Mot de passe</label>
+                <input type="password" formControlName="password"/>
+            </div>
+            <div class="buttonDiv">
+                <button class="RegisterBtn" type="submit">
+                    S'inscrire
+                </button>
+            </div>
+        </form>
+    </section>
+</main>

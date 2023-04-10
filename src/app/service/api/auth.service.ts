@@ -13,7 +13,14 @@ export class AuthService extends ParentApiService{
     super();
   }
 
+  //fonction de connexion
   connect(username:string | null ,password:string | null): Observable<object>{
     return this.httpClient.post(environment.apiUrl+'/api/login_check',{username,password})  
   }
+
+  //fonction d'inscription
+  register(email:string | null ,nom:string | null ,prenom:string | null,password:string | null ): Observable<object>{
+    return this.httpClient.post(environment.apiUrl+'/api/register',{email,nom,prenom,password})  
+  }
+
 }

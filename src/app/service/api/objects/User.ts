@@ -1,3 +1,5 @@
 export class User{
-    user:string | undefined;
+    id: number | undefined;
+    username: string | undefined;
+    roles: Array<string> | undefined;
 }

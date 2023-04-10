@@ -1,23 +1,4 @@
-<div *ngIf="isConnect()">
-  <button (click)="Deconnexion()">Deconnexion</button>
-
-  <div *ngIf="(isAdmin() | async)">
-    <button routerLink="/admin">Bouton admin</button>
-  </div>
-  
-  <div *ngIf="(isProf() | async)">
-    <button routerLink="/prof">Bouton professeur</button>
-  </div>
-  
-  <div *ngIf="(isStudent() | async)">
-    <button routerLink="/etudiant">Bouton étudiant</button>
-  </div>
-
-</div>
-
-<div *ngIf="!isConnect()">
-  <button routerLink="/login">Se connecter</button>
-</div>
+<app-header></app-header>
 <h1>
   <span class="titreSimple">Découvrez</span>
   <span class="titreItalique">les portfolios</span>
@@ -81,4 +62,7 @@
     </p>
   </div>
 </section>
-<div><button routerLink="/all">Voir tous les portfolios</button></div>
+<div class="boxbtnPortfolio">
+  <button routerLink="/all" class="btnPortfolio">Voir tous les portfolios</button>
+</div>
+<app-footer></app-footer>

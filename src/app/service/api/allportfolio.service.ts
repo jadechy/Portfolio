@@ -14,11 +14,8 @@ export class AllportfolioService extends ParentApiService{
     super();
   }
 
-  // connect(): Observable<Array<Portfolio>>{
-  //   return this.httpClient.get<Array<Portfolio>>(environment.apiUrl+'/api/portfolio');  
-  // }
-
-  getProjets() {
-    return this.httpClient.get(environment.apiUrl+'/api/portfolio');
+  getUsers() {
+    return this.httpClient.get(environment.apiUrl+'/api/utilisateurprojet');
   }
+
 }

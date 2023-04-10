@@ -11,43 +11,8 @@ import { AuthGuard } from 'src/app/service/guard/auth.guard';
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit{
-  constructor(
-    private authService: AuthService,
-    private adminGuard: AuthAdminGuard,
-    private profGuard: AuthProfGuard,
-    private studentGuard: AuthGuard
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
-  }
-
-  isConnect() {
-    if(localStorage.getItem("isConnect")){
-      console.log('connecté')
-      return true
-      
-    }
-    else{
-      console.log('pas connecté')
-      return false
-      
-    }
-  }
-
-  isStudent(): Observable<boolean> {
-    return this.studentGuard.canActivate(null, null);
-  }
-  
-  isProf(): Observable<boolean> {
-    return this.profGuard.canActivate(null, null);
-  }
-
-  isAdmin(): Observable<boolean> {
-    return this.adminGuard.canActivate(null, null);
-  }
-
-  Deconnexion():void{
-    localStorage.removeItem("user");
-    localStorage.removeItem("isConnect");
   }
 }

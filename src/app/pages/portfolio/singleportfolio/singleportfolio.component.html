@@ -1,1 +1,49 @@
-<p>singleportfolio works!</p>
+<app-header></app-header>
+<div *ngFor="let user of users">
+    <h1>Bienvenue sur le portfolio {{user.prenom}} {{user.nom}}</h1>
+</div>
+<ul>
+    <div *ngFor="let projet of projets">
+        <div *ngIf="projet">
+            <h2>Détails du projet</h2>
+            <p><strong>ID:</strong> {{projet.id}}</p>
+            <p><strong>Nom:</strong> {{projet.nom}}</p>
+            <p><strong>Description:</strong> {{projet.description}}</p>
+            <p><strong>Annee:</strong> {{projet.annee}}</p>
+            <p><strong>Acquis:</strong> {{projet.acquis}}</p>
+            <p><strong>Domaine:</strong> {{projet.domaine}}</p>
+            <p><strong>Photo:</strong> {{projet.photo}}</p>
+            <!-- <p><strong>Utilisateur:</strong> {{projet.utilisateur.prenom}} {{projet.utilisateur.nom}}</p> -->
+            <div><button [routerLink]="['/projet']" [queryParams]="{id: projet.id, utilisateurId: projet.utilisateur.id}">Voir le projet</button></div>
+        </div>
+        <h2>Commentaires</h2>
+        <ul>
+            <div *ngFor="let commentaire of commentaires">
+                <p>Texte {{commentaire.message}}</p>
+            </div>
+        </ul>
+        <div *ngIf="isConnect()">
+            <div *ngIf="(isProf() | async)">
+                <h2>Rajouter un commentaire</h2>
+                    <section class="CommForm">
+                        <h1 class="CommTitre">Se connecter</h1>
+                        <form [formGroup]="formController" #formComm="ngForm">
+                            <div class="Commentaires">
+                                <label>Commentaires</label>
+                                <input type="text" formControlName="commentaire" />
+                            </div>
+                            <div class="buttonDiv">
+                                <button class="LoginBtn" type="submit">
+                                    Commenter
+                                </button>
+                            </div>
+                        </form>
+                    </section>
+            </div>
+        </div>
+        
+    </div>
+</ul>
+
+
+

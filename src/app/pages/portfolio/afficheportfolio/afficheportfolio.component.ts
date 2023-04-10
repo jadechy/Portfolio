@@ -8,15 +8,15 @@ import { JwtService } from 'src/app/service/jwt.service';
   templateUrl: './afficheportfolio.component.html',
   styleUrls: ['./afficheportfolio.component.css']
 })
-export class AfficheportfolioComponent implements OnInit{
-  projets: any[] = [];
+export class AfficheportfolioComponent{
+  users: any[] = [];
 
-  constructor(private router: Router,private allportfolio: AllportfolioService){
+  constructor(private allportfolio: AllportfolioService, private router: Router){
   }
 
   ngOnInit() {
-    this.allportfolio.getProjets().subscribe((data: any[]) => {
-      this.projets = data;
+    this.allportfolio.getUsers().subscribe((data: any[]) => {
+      this.users = data;
     });
   }
 

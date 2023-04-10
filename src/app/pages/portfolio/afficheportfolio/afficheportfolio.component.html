@@ -1,17 +1,11 @@
-<p>afficheportfolio works!</p>
-<h2>Liste des projets</h2>
-<ul>
-    <div *ngFor="let projet of projets">
-        <div *ngIf="projet">
-            <h2>Détails du projet</h2>
-            <p><strong>Nom:</strong> {{projet.nom}}</p>
-            <p><strong>Description:</strong> {{projet.description}}</p>
-            <p><strong>Annee:</strong> {{projet.annee}}</p>
-            <p><strong>Acquis:</strong> {{projet.acquis}}</p>
-            <p><strong>Domaine:</strong> {{projet.domaine}}</p>
-            <p><strong>Photo:</strong> {{projet.photo}}</p>
-            <p><strong>Utilisateur:</strong> {{projet.utilisateur_id}}</p>
-            <div><button [routerLink]="['/all', projet.id]">Voir le projet</button></div>
-        </div>
-    </div>
-</ul>
+<app-header></app-header>
+<h1>Les portfolios</h1>
+<h3>Découvrez tous les portfolios de nos étudiants</h3>
+
+<div *ngFor="let user of users">
+    {{ user.prenom }} {{ user.nom }}
+    <!-- <button (click)="afficherProjets(user.id)" routerLink="/single">Voir les projets</button> -->
+    <button [routerLink]="['/single']" [queryParams]="{id: user.id}">Voir les projets</button>
+</div>
+
+

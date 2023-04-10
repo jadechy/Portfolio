@@ -1,1 +1,13 @@
-<p>profil-prof works!</p>
+<app-header></app-header>
+<h1>User Profil</h1>
+<p>Username: {{ currentUser.username }}</p>
+<p>Nom: {{ nom }}</p>
+<p>Prenom: {{ prenom }}</p>
+
+<p>Vos commentaires</p>
+<ul>
+    <div *ngFor="let commentaire of commentaires">
+        <p>Commentaires: {{ commentaire.message}}</p>
+        <p>Projets: {{ commentaire.projetNom }}</p>
+    </div>
+</ul>

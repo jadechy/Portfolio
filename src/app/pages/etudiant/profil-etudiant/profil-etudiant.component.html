@@ -1,1 +1,23 @@
-<p>profil-etudiant works!</p>
+<app-header></app-header>
+<h1>User Profile</h1>
+<p>Username: {{ currentUser.username }}</p>
+
+<div>
+    <p>Nom: {{ nom }}</p>
+    <p>Prenom: {{ prenom }}</p>
+</div>
+
+<h2>Vos projets</h2>
+<ul>
+    <div *ngFor="let projet of projets">
+        <div *ngIf="projet">
+            <h2>Détails du projet</h2>
+            <p><strong>Nom:</strong> {{projet.nom}}</p>
+            <p><strong>Description:</strong> {{projet.description}}</p>
+            <p><strong>Annee:</strong> {{projet.annee}}</p>
+            <p><strong>Acquis:</strong> {{projet.acquis}}</p>
+            <p><strong>Domaine:</strong> {{projet.domaine}}</p>
+            <p><strong>Photo:</strong> {{projet.photo}}</p>
+        </div>
+    </div>
+</ul>

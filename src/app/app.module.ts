@@ -20,6 +20,17 @@ import { AdminComponent } from './pages/admin/admin.component';
 import { ProfilEtudiantComponent } from './pages/etudiant/profil-etudiant/profil-etudiant.component';
 import { ProfilProfComponent } from './pages/prof/profil-prof/profil-prof.component';
 import { AuthProfGuard } from './service/guard/auth-prof.guard';
+import { RegisterComponent } from './pages/register/register.component';
+import { HeaderComponent } from './pages/home/header/header.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { FooterComponent } from './pages/home/footer/footer.component';
+import { AfficheprojetComponent } from './pages/portfolio/afficheprojet/afficheprojet.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +42,11 @@ import { AuthProfGuard } from './service/guard/auth-prof.guard';
     SingleportfolioComponent,
     AdminComponent,
     ProfilEtudiantComponent,
-    ProfilProfComponent
+    ProfilProfComponent,
+    RegisterComponent,
+    HeaderComponent,
+    FooterComponent,
+    AfficheprojetComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +60,10 @@ import { AuthProfGuard } from './service/guard/auth-prof.guard';
         component: LoginComponent
       },
       {
+        path: 'register',
+        component: RegisterComponent
+      },
+      {
         path: 'addprojet',
         component: CreatePortfolioComponent, 
         canActivate:[AuthGuard]
@@ -54,8 +73,12 @@ import { AuthProfGuard } from './service/guard/auth-prof.guard';
         component : AfficheportfolioComponent
       },
       {
-        path:'all/:id',
-        component : AfficheportfolioComponent
+        path:'single',
+        component : SingleportfolioComponent
+      },
+      {
+        path:'projet',
+        component : AfficheprojetComponent
       },
       {
         path: 'admin',
@@ -76,7 +99,13 @@ import { AuthProfGuard } from './service/guard/auth-prof.guard';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgSelectModule
+    NgSelectModule,
+    BrowserAnimationsModule,
+    MatSlideToggleModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [HttpClientModule,JwtService, {provide:HTTP_INTERCEPTORS,useClass:TokenInterceptor,multi:true}],
   bootstrap: [AppComponent]

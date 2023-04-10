@@ -1,0 +1,13 @@
+<app-header></app-header>
+
+<ul>
+    <div *ngIf="projet">
+        <p>Titre: {{ projet.nom }}</p>
+        <p>Description: {{ projet.description }}</p>
+        <p>Année: {{ projet.annee }}</p>
+        <p>Acquis: {{ projet.acquis }}</p>
+        <p>Domaine: {{ projet.domaine }}</p>
+        <p>Photo: {{ projet.photo }}</p>
+    </div>
+</ul>
+<app-footer></app-footer>

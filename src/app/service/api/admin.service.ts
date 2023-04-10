@@ -20,7 +20,7 @@ export class AdminService extends ParentApiService{
   }
 
   getCommentaires(){
-    return this.httpClient.get(environment.apiUrl+'/api/commentaire');
+    return this.httpClient.get(environment.apiUrl+'/api/commentaires');
   }
 
   supprimerUtilisateur(id: number) {

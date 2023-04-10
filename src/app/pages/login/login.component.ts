@@ -21,7 +21,6 @@ export class LoginComponent {
   });   
   
   constructor(private router: Router,private authService: AuthService,private jwtService: JwtService){
-    
   }
 
   connect(){
