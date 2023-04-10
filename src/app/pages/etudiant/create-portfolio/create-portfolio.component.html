@@ -1,0 +1,15 @@
+<form [formGroup]="formController" #formPortfolio="ngForm">
+    <div>
+        <label>Nom</label>
+        <input type="text" formControlName="nom" />
+    </div>
+    <div>
+        <label>Description</label>
+        <input type="text" formControlName="description"/>
+    </div>
+    <div>
+        <label>Competences</label>
+        <ng-select formControlName="competences" [items]="formCompetences$ | async" [multiple]="true"></ng-select>
+    </div>
+    <button type="submit">Créer</button>
+</form>

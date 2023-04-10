@@ -1,0 +1,37 @@
+<div><button routerLink='/'>Home</button></div>
+<h2>Liste des utilisateurs</h2>
+<div *ngFor="let user of users">
+    {{ user.prenom }} {{ user.nom }} {{ user.email }} {{ user.roles }}
+    <button (click)="supprimerUtilisateur(user.id)">Supprimer</button>
+</div>
+
+<h2>Liste des projets</h2>
+<ul>
+    <div *ngFor="let projet of projets">
+        <div *ngIf="projet">
+            <h2>Détails du projet</h2>
+            <p><strong>Nom:</strong> {{projet.nom}}</p>
+            <p><strong>Description:</strong> {{projet.description}}</p>
+            <p><strong>Annee:</strong> {{projet.annee}}</p>
+            <p><strong>Acquis:</strong> {{projet.acquis}}</p>
+            <p><strong>Domaine:</strong> {{projet.domaine}}</p>
+            <p><strong>Photo:</strong> {{projet.photo}}</p>
+            <p><strong>Utilisateur:</strong> {{projet.utilisateur_id}}</p>
+            <button (click)="supprimerProjet(projet.id)">Supprimer</button>
+        </div>
+    </div>
+</ul>
+
+<h2>Liste des Commentaires</h2>
+<ul>
+    <div *ngFor="let commentaire of commentaires">
+        <div *ngIf="commentaire">
+            <h2>Détails du projet</h2>
+            <p><strong>Texte:</strong> {{commentaire.texte}}</p>
+            <p><strong>Professeur:</strong> {{commentaire.utilisateur_id}}</p>
+            <p><strong>Projet:</strong> {{commentaire.projet_id}}</p>
+            <p><strong>Note:</strong> {{commentaire.note}}</p>
+            <button (click)="supprimerComm(commentaire.id)">Supprimer</button>
+        </div>
+    </div>
+</ul>

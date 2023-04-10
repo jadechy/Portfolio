@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #d2d3d3;
+    font-family: "Montserrat";
+    font-size: 1rem;
+}
+
+#connexion {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.LoginForm {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-direction: column;
+    height: 80vh;
+    padding: 20px;
+    margin: 20px;
+    background-color: #ffffff;
+    border-radius: 35px;
+}
+
+.LoginTitre {
+    margin-block-start: 40px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+label {
+    font-family: "Montserrat";
+    font-weight: bold;
+    color: #0e0e0e;
+}
+
+input[type="password"],
+[type="email"] {
+    padding: 15px 20px;
+    font-family: "Montserrat";
+    margin-block-start: 10px;
+    width: 100%;
+    border: none;
+    background: #F5F5F5;
+    padding-inline: 15px;
+    border-radius: 20px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.buttonDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.LoginBtn {
+    padding: 15px 20px;
+    background: #67128f;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: white;
+    width: 60%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.LoginBtn:hover {
+    background: #3b0b52;
+}
+
+@media screen and (min-width: 1192px) {
+    #connexion {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .LoginForm {
+        display: flex;
+        justify-content: space-between;
+        width: 50vw;
+        align-items: stretch;
+        flex-direction: column;
+        height: 80vh;
+        padding: 20px;
+        margin: 20px;
+        background-color: #ffffff;
+        border-radius: 35px;
+        filter: drop-shadow(0 0 30px #c2c2c2);
+    }
+
+    .LoginBtn {
+        width: 50%;
+    }
+}

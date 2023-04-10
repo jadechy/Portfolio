@@ -1,0 +1,22 @@
+<main id="connexion">
+    <section class="LoginForm">
+        <h1 class="LoginTitre">Se connecter</h1>
+        <form [formGroup]="formController" #formLogin="ngForm" (ngSubmit)="connect()">
+            <div class="LoginEmail">
+                <label>Email</label>
+                <input type="email" formControlName="email" />
+            </div>
+            <div class="LoginMdp">
+                <label>Mot de passe</label>
+                <input type="password" formControlName="password"/>
+            </div>
+            <div class="buttonDiv">
+                <button class="LoginBtn" type="submit">
+                    Se connecter
+                </button>
+            </div>
+        </form>
+    </section>
+</main>
+
+

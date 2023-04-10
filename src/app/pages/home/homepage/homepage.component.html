@@ -1,0 +1,84 @@
+<div *ngIf="isConnect()">
+  <button (click)="Deconnexion()">Deconnexion</button>
+
+  <div *ngIf="(isAdmin() | async)">
+    <button routerLink="/admin">Bouton admin</button>
+  </div>
+  
+  <div *ngIf="(isProf() | async)">
+    <button routerLink="/prof">Bouton professeur</button>
+  </div>
+  
+  <div *ngIf="(isStudent() | async)">
+    <button routerLink="/etudiant">Bouton étudiant</button>
+  </div>
+
+</div>
+
+<div *ngIf="!isConnect()">
+  <button routerLink="/login">Se connecter</button>
+</div>
+<h1>
+  <span class="titreSimple">Découvrez</span>
+  <span class="titreItalique">les portfolios</span>
+  <span class="titreViolet">MMI</span>
+</h1>
+<section class="sectionMMI">
+  <div class="presMMI">
+    <h3>Qu'est-ce que le BUT MMI ?</h3>
+    <p class="intro">
+      Diplôme professionnel de niveau 6 (bac + 3), le BUT MMI (métiers du
+      multimédia et de l'Internet) forme à des activités relevant de domaines
+      variés, allant de la conception de sites Internet à la gestion de
+      communautés sur les réseaux sociaux, en passant par la production de
+      produits multimédias (jeux vidéo, applications mobiles, etc.) ou le
+      développement de services Web.
+    </p>
+    <div class="detailMMI">
+      <details>
+        <summary>Compétences</summary>
+        Il existe 5 compétences en MMI qui encadre la formation.
+      </details>
+      <details>
+        <summary>Apprentissages Critiques</summary>
+        Les apprentissages critiques sont les notions qui composent les
+        différentes compétences.
+      </details>
+      <details>
+        <summary>SAE</summary>
+        Ce sont nos projets tutorés.
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="parcours">
+  <div class="devweb">
+    <h3>Le parcours Développement web</h3>
+    <p>
+      Le parcours développement Web et dispositifs interactifs forme au
+      développement de sites Web et à l'intégration d'applications multimédias
+      ou mobiles. Il aborde notamment les outils et langages informatiques
+      nécessaires à la conception et à la gestion de ces médias. Il prépare
+      notamment aux métiers d'intégrateur ; de développeur « back », « front »,
+      ou « full stack » d'intégrateur de dispositifs de réalité virtuelle. Les
+      débouchés se situent en agences de communication, en agences Web, dans des
+      start-up, des sociétés de services informatiques, des services de
+      communication de grandes entreprises ou organisations.
+    </p>
+  </div>
+  <div class="creanum">
+    <h3>Le parcours Créa numérique</h3>
+    <p>
+      Le parcours création numérique vise à développer l'expression de message
+      sur différents médias, sous la forme de création graphique et d'écriture
+      multimédia. II permet d'acquérir les techniques nécessaires à la création
+      de ressources numériques, notamment de publications Web. Il prépare
+      principalement aux métiers de designer, infographiste, game designer ou
+      technicien audiovisuel. Les principaux débouchés se situent en agences de
+      communication, en agences Web, en agences publicitaires, ou dans les
+      services de communication des grandes entreprises.
+    </p>
+  </div>
+</section>
+<div><button routerLink="/all">Voir tous les portfolios</button></div>
